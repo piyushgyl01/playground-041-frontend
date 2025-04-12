@@ -72,7 +72,7 @@ export default function Details() {
               </Link>
             </div>
             <div>
-              <Link to={`/edit/${data._id}`} className="btn btn-warning me-2">
+              <Link to={`/update/${data._id}`} className="btn btn-warning me-2">
                 Edit
               </Link>
               <button onClick={handleDelete} className="btn btn-danger">

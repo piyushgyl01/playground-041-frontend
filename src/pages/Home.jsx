@@ -26,7 +26,7 @@ export default function Home() {
     <main className="container my-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Anime List</h2>
-        <Link to="/create" className="btn btn-success">
+        <Link to="/post" className="btn btn-success">
           Add New Anime
         </Link>
       </div>
