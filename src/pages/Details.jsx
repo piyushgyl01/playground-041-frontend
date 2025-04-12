@@ -7,15 +7,18 @@ export default function Details() {
   const navigate = useNavigate();
 
   const { data, loading, error } = useFetch(
-    `http://localhost:4000/animes/${id}`
+    `https://playground-041-backend.vercel.app/animes/${id}`
   );
 
   async function handleDelete() {
     if (window.confirm("Are you sure you want to delete this anime?")) {
       try {
-        const response = await fetch(`http://localhost:4000/animes/${id}`, {
-          method: "DELETE",
-        });
+        const response = await fetch(
+          `https://playground-041-backend.vercel.app/animes/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
 
         if (response.ok) {
           navigate("/");

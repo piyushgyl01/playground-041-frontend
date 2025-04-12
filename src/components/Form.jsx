@@ -14,7 +14,7 @@ export default function Form({ isEdit }) {
   const navigate = useNavigate();
 
   const { data, loading, error, refetch } = useFetch(
-    `http://localhost:4000/animes/${id}`
+    `https://playground-041-backend.vercel.app/animes/${id}`
   );
 
   useEffect(() => {
@@ -32,26 +32,32 @@ export default function Form({ isEdit }) {
 
     try {
       if (isEdit) {
-        const response = await fetch(`http://localhost:4000/animes/${id}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          `https://playground-041-backend.vercel.app/animes/${id}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         if (response.ok) {
           navigate(`/details/${id}`);
           refetch();
         }
       } else {
-        const response = await fetch(`http://localhost:4000/animes`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          `https://playground-041-backend.vercel.app/animes`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         if (response.ok) {
           navigate(`/`);

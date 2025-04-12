@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const { data, loading, error, refetch } = useFetch(
-    "http://localhost:4000/animes"
+    "https://playground-041-backend.vercel.app/animes"
   );
 
   async function handleDelete(id) {
     if (window.confirm("Are you sure you want to delete this anime?")) {
       try {
-        const response = await fetch(`http://localhost:4000/animes/${id}`, {
-          method: "DELETE",
-        });
+        const response = await fetch(
+          `https://playground-041-backend.vercel.app/animes/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
 
         if (response.ok) {
           refetch();
